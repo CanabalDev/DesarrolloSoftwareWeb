@@ -11,6 +11,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <h2>PAGINA DE INICIO</h2>
+        
+        <a th:href="@{/agregar}" >Agregar equipo</a>
 
         <div th:if="${equipos != null and !equipos.empty}">
             <table border="1" cellspacing="1" cellpadding="1">

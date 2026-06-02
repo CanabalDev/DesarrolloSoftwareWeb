@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html  xmlns:th="http://www.thymeleaf.org" 
+       xmlns="http://www.w3.org/1999/xhtml"
+       >
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Datos del Equipo</h1>
+
+        <a th:href="@{/}">REGRESAR</a>
+
+        <hr>
+
+            <form th:action="@{/guardar}" method="POST" th:object="${equipo}">
+
+                <input type="hidden" th:field="*{id}" />
+
+                <label for="nombre">NOMBRE:</label>
+                <input type="text" th:field="*{nombre}" required />
+                <br>
+
+                <label for="eslogan">ESLOGAN:</label>
+                <input type="text" th:field="*{eslogan}" />
+                <br>
+
+                <label for="tecnico">TÉCNICO:</label>
+                <input type="text" th:field="*{tecnico}" />
+                <br>
+
+                <label for="pais">PAÍS:</label>
+                <input type="text" th:field="*{pais}" />
+                <br>
+
+                <label for="ciudad">CIUDAD:</label>
+                <input type="text" th:field="*{ciudad}" />
+                <br>
+
+                <label for="categoria">CATEGORÍA:</label>
+                <input type="text" th:field="*{categoria}" />
+                <br>
+
+                <label for="numGoles">GOLES:</label>
+                <input type="number" th:field="*{numGoles}" min="0" />
+                <br>
+
+                <label for="numPartidosJugados">PARTIDOS JUGADOS:</label>
+                <input type="number" th:field="*{numPartidosJugados}" min="0" />
+                <br>
+
+                <label for="numPartidosGanados">PARTIDOS GANADOS:</label>
+                <input type="number" th:field="*{numPartidosGanados}" min="0" />
+                <br>
+
+                <label for="numCampeonatos">CAMPEONATOS:</label>
+                <input type="number" th:field="*{numCampeonatos}" min="0" />
+                <br>
+
+                <label for="numExpulsiones">EXPULSIONES:</label>
+                <input type="number" th:field="*{numExpulsiones}" min="0" />
+                <br>
+
+                <label for="numEmpates">EMPATES:</label>
+                <input type="number" th:field="*{numEmpates}" min="0" />
+                <br>
+
+                <input type="reset" value="LIMPIAR"/>
+                &nbsp;&nbsp;&nbsp;
+
+                <input type="submit" value="GUARDAR"/>
+
+            </form>
+
+    </body>
+</html>
