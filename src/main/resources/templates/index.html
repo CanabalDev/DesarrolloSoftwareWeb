@@ -11,7 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <h2>PAGINA DE INICIO</h2>
-        
+
         <a th:href="@{/agregar}" >Agregar equipo</a>
 
         <div th:if="${equipos != null and !equipos.empty}">
@@ -31,6 +31,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <th>EXPULSIONES</th>
                         <th>EMPATES</th>
                         <th>EDITAR</th>
+                        <th>ELIMINAR</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +50,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <td th:text="${e.numExpulsiones}" ></td>
                         <td th:text="${e.numEmpates}" ></td>
                         <td> <a th:href="@{/editar/{id}(id=${e.id})}" th:text="EDITAR" ></a> </td>
+                        <td> <a th:href="@{/eliminar/{id}(id=${e.id})}" th:text="ELIMINAR" ></a> </td>
+
                     </tr>
                 </tbody>
             </table>

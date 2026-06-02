@@ -50,7 +50,15 @@ public class ControladorInicio {
         log.info("Invocado el método EDITAR");
         equipo = equipoServicio.buscar(equipo);
         modelo.addAttribute("equipo", equipo);
-        
+
         return "modificar";
+    }
+
+    @GetMapping("/eliminar/{id}")
+    public String eliminar(Equipo equipo) {
+        
+        equipoServicio.eliminar(equipo);
+        
+        return "redirect:/";
     }
 }
