@@ -11,48 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <h2>PAGINA DE INICIO</h2>
-        <p th:text="${mensaje}" ></p>
-        <p th:text="${dato}" ></p>
-        <hr>
-        <h2>Equipo Favorito</h2>
-        <b>NOMBRE:</b>
-        <span th:text="${equipoFavorito.nombre}"></span><br>
 
-        <b>ESLOGAN:</b>
-        <span th:text="${equipoFavorito.eslogan}"></span><br>
-
-        <b>TÉCNICO:</b>
-        <span th:text="${equipoFavorito.tecnico}"></span><br>
-
-        <b>PAÍS:</b>
-        <span th:text="${equipoFavorito.pais}"></span><br>
-
-        <b>CIUDAD:</b>
-        <span th:text="${equipoFavorito.ciudad}"></span><br>
-
-        <b>CATEGORÍA:</b>
-        <span th:text="${equipoFavorito.categoria}"></span><br>
-
-        <b>GOLES:</b>
-        <span th:text="${equipoFavorito.numGoles}"></span><br>
-
-        <b>PARTIDOS JUGADOS:</b>
-        <span th:text="${equipoFavorito.numPartidosJugados}"></span><br>
-
-        <b>PARTIDOS GANADOS:</b>
-        <span th:text="${equipoFavorito.numPartidosGanados}"></span><br>
-
-        <b>CAMPEONATOS:</b>
-        <span th:text="${equipoFavorito.numCampeonatos}"></span><br>
-
-        <b>EXPULSIONES:</b>
-        <span th:text="${equipoFavorito.numExpulsiones}"></span><br>
-
-        <b>EMPATES:</b>
-        <span th:text="${equipoFavorito.numEmpates}"></span><br>
-
-        <hr>
-        
         <div th:if="${equipos != null and !equipos.empty}">
             <table border="1" cellspacing="1" cellpadding="1">
                 <thead>
@@ -90,6 +49,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </table>
 
         </div>    
-        
+
+        <div th:if="${equipos == null or equipos.empty}">
+            La lista de equipos está vacía
+        </div>
+
     </body>
 </html>
