@@ -24,7 +24,7 @@ public class ControladorInicio {
     @Autowired
 
     IntEquipoServicio equipoServicio;
-    
+
     @GetMapping("/")
     public String inicio(Model modelo) {
 
@@ -33,15 +33,24 @@ public class ControladorInicio {
         log.info("Ejecutando el controlador de inicio");
         return "index";
     }
-    
+
     @GetMapping("/agregar")
     public String agregar(Equipo equipo) {
         return "modificar";
     }
-    
+
     @PostMapping("/guardar")
     public String guardar(Equipo equipo) {
         equipoServicio.guardar(equipo);
         return "redirect:/";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String editar(Equipo equipo, Model modelo) {
+        log.info("Invocado el método EDITAR");
+        equipo = equipoServicio.buscar(equipo);
+        modelo.addAttribute("equipo", equipo);
+        
+        return "modificar";
     }
 }

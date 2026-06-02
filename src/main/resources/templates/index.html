@@ -30,6 +30,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <th>CAMPEONATOS</th>
                         <th>EXPULSIONES</th>
                         <th>EMPATES</th>
+                        <th>EDITAR</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +47,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <td th:text="${e.numCampeonatos}" ></td>
                         <td th:text="${e.numExpulsiones}" ></td>
                         <td th:text="${e.numEmpates}" ></td>
+                        <td> <a th:href="@{/editar/{id}(id=${e.id})}" th:text="EDITAR" ></a> </td>
                     </tr>
                 </tbody>
             </table>
