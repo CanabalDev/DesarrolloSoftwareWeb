@@ -11,6 +11,7 @@ import com.example.demo.modelo.Equipo;
 import com.example.demo.servicio.IntEquipoServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 
 /**
@@ -40,7 +41,12 @@ public class ControladorInicio {
     }
 
     @PostMapping("/guardar")
-    public String guardar(Equipo equipo) {
+    public String guardar(Equipo equipo, Errors errores) {
+        
+        if (errores.hasErrors() ) {
+            return "modificar";
+        }
+        
         equipoServicio.guardar(equipo);
         return "redirect:/";
     }
