@@ -13,5 +13,43 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <h2>PAGINA DE INICIO</h2>
         <p th:text="${mensaje}" ></p>
         <p th:text="${dato}" ></p>
+        <hr>
+        <h2>Equipo Favorito</h2>
+        <b>NOMBRE:</b>
+        <span th:text="${equipo.nombre}"></span><br>
+
+        <b>ESLOGAN:</b>
+        <span th:text="${equipo.eslogan}"></span><br>
+
+        <b>TÉCNICO:</b>
+        <span th:text="${equipo.tecnico}"></span><br>
+
+        <b>PAÍS:</b>
+        <span th:text="${equipo.pais}"></span><br>
+
+        <b>CIUDAD:</b>
+        <span th:text="${equipo.ciudad}"></span><br>
+
+        <b>CATEGORÍA:</b>
+        <span th:text="${equipo.categoria}"></span><br>
+
+        <b>GOLES:</b>
+        <span th:text="${equipo.numGoles}"></span><br>
+
+        <b>PARTIDOS JUGADOS:</b>
+        <span th:text="${equipo.numPartidosJugados}"></span><br>
+
+        <b>PARTIDOS GANADOS:</b>
+        <span th:text="${equipo.numPartidosGanados}"></span><br>
+
+        <b>CAMPEONATOS:</b>
+        <span th:text="${equipo.numCampeonatos}"></span><br>
+
+        <b>EXPULSIONES:</b>
+        <span th:text="${equipo.numExpulsiones}"></span><br>
+
+        <b>EMPATES:</b>
+        <span th:text="${equipo.numEmpates}"></span><br>
+
     </body>
 </html>
