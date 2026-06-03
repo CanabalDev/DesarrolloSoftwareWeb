@@ -4,11 +4,13 @@ import com.example.demo.application.port.out.EquipoRepositoryPort;
 import com.example.demo.domain.model.Equipo;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author lm-carlos
  */
+@Component
 public class EquipoPersistenceAdapter implements EquipoRepositoryPort {
     
     private final JpaEquipoRepository repository;
