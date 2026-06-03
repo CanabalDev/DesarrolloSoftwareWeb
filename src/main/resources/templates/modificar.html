@@ -11,70 +11,94 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1>Datos del Equipo</h1>
 
-        <a th:href="@{/}">REGRESAR</a>
+        <h1 th:text="#{equipo.formulario}"></h1>
 
-        <hr>
+        <a th:href="@{/}" th:text="#{accion.regresar}"></a>
 
-            <form th:action="@{/guardar}" method="POST" th:object="${equipo}">
+        <br/>
+        <hr/>
 
-                <input type="hidden" th:field="*{id}" />
+        <form th:action="@{/guardar}" method="POST" th:object="${equipo}">
 
-                <label for="nombre">NOMBRE:</label>
-                <input type="text" th:field="*{nombre}" required />
-                <br>
+            <input type="hidden" th:field="*{id}" />
 
-                <label for="eslogan">ESLOGAN:</label>
-                <input type="text" th:field="*{eslogan}" />
-                <br>
+            <label for="nombre" th:text="#{equipo.nombre}"></label>
+            <input type="text" th:field="*{nombre}" />
+            <span th:if="${#fields.hasErrors('nombre')}"
+                  th:errors="*{nombre}"></span>
+            <br/>
 
-                <label for="tecnico">TÉCNICO:</label>
-                <input type="text" th:field="*{tecnico}" />
-                <br>
+            <label for="eslogan" th:text="#{equipo.eslogan}"></label>
+            <input type="text" th:field="*{eslogan}" />
+            <br/>
 
-                <label for="pais">PAÍS:</label>
-                <input type="text" th:field="*{pais}" />
-                <br>
+            <label for="tecnico" th:text="#{equipo.tecnico}"></label>
+            <input type="text" th:field="*{tecnico}" />
+            <span th:if="${#fields.hasErrors('tecnico')}"
+                  th:errors="*{tecnico}"></span>
+            <br/>
 
-                <label for="ciudad">CIUDAD:</label>
-                <input type="text" th:field="*{ciudad}" />
-                <br>
+            <label for="pais" th:text="#{equipo.pais}"></label>
+            <input type="text" th:field="*{pais}" />
+            <span th:if="${#fields.hasErrors('pais')}"
+                  th:errors="*{pais}"></span>
+            <br/>
 
-                <label for="categoria">CATEGORÍA:</label>
-                <input type="text" th:field="*{categoria}" />
-                <br>
+            <label for="ciudad" th:text="#{equipo.ciudad}"></label>
+            <input type="text" th:field="*{ciudad}" />
+            <span th:if="${#fields.hasErrors('ciudad')}"
+                  th:errors="*{ciudad}"></span>
+            <br/>
 
-                <label for="numGoles">GOLES:</label>
-                <input type="number" th:field="*{numGoles}" min="0" />
-                <br>
+            <label for="categoria" th:text="#{equipo.categoria}"></label>
+            <input type="text" th:field="*{categoria}" />
+            <span th:if="${#fields.hasErrors('categoria')}"
+                  th:errors="*{categoria}"></span>
+            <br/>
 
-                <label for="numPartidosJugados">PARTIDOS JUGADOS:</label>
-                <input type="number" th:field="*{numPartidosJugados}" min="0" />
-                <br>
+            <label for="numGoles" th:text="#{equipo.numGoles}"></label>
+            <input type="number" th:field="*{numGoles}" />
+            <span th:if="${#fields.hasErrors('numGoles')}"
+                  th:errors="*{numGoles}"></span>
+            <br/>
 
-                <label for="numPartidosGanados">PARTIDOS GANADOS:</label>
-                <input type="number" th:field="*{numPartidosGanados}" min="0" />
-                <br>
+            <label for="numPartidosJugados" th:text="#{equipo.numPartidosJugados}"></label>
+            <input type="number" th:field="*{numPartidosJugados}" />
+            <span th:if="${#fields.hasErrors('numPartidosJugados')}"
+                  th:errors="*{numPartidosJugados}"></span>
+            <br/>
 
-                <label for="numCampeonatos">CAMPEONATOS:</label>
-                <input type="number" th:field="*{numCampeonatos}" min="0" />
-                <br>
+            <label for="numPartidosGanados" th:text="#{equipo.numPartidosGanados}"></label>
+            <input type="number" th:field="*{numPartidosGanados}" />
+            <span th:if="${#fields.hasErrors('numPartidosGanados')}"
+                  th:errors="*{numPartidosGanados}"></span>
+            <br/>
 
-                <label for="numExpulsiones">EXPULSIONES:</label>
-                <input type="number" th:field="*{numExpulsiones}" min="0" />
-                <br>
+            <label for="numCampeonatos" th:text="#{equipo.numCampeonatos}"></label>
+            <input type="number" th:field="*{numCampeonatos}" />
+            <span th:if="${#fields.hasErrors('numCampeonatos')}"
+                  th:errors="*{numCampeonatos}"></span>
+            <br/>
 
-                <label for="numEmpates">EMPATES:</label>
-                <input type="number" th:field="*{numEmpates}" min="0" />
-                <br>
+            <label for="numExpulsiones" th:text="#{equipo.numExpulsiones}"></label>
+            <input type="number" th:field="*{numExpulsiones}" />
+            <span th:if="${#fields.hasErrors('numExpulsiones')}"
+                  th:errors="*{numExpulsiones}"></span>
+            <br/>
 
-                <input type="reset" value="LIMPIAR"/>
-                &nbsp;&nbsp;&nbsp;
+            <label for="numEmpates" th:text="#{equipo.numEmpates}"></label>
+            <input type="number" th:field="*{numEmpates}" />
+            <span th:if="${#fields.hasErrors('numEmpates')}"
+                  th:errors="*{numEmpates}"></span>
+            <br/>
 
-                <input type="submit" value="GUARDAR"/>
+            <input type="reset" th:value="#{accion.reiniciar}" />
+            &nbsp;&nbsp;&nbsp;
 
-            </form>
+            <input type="submit" th:value="#{accion.guardar}" />
+
+        </form>
 
     </body>
 </html>

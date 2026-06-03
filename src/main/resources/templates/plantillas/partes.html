@@ -6,17 +6,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html>
     <head xmlns:th="http://www.thymeleaf.org" 
        xmlns="http://www.w3.org/1999/xhtml" >
-        <title>TODO supply a title</title>
+        <title>APLICACION WEB CON SPRING BOOT</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         
         <header th:fragment="cabecero" >
-            <h1>APLICACION CON SPRINT BOOT</h1>
+            <h1 th:text="#{plantilla.titulo}" >TITULO</h1>
         </header>
         <footer th:fragment="piecero" >
-            <span>por: Carlos Canabal</span>
+            <span th:text="#{plantilla.pie}" >PIE</span>
             <a href="https://youtube.com" >Video de sustentación</a>
         </footer>
 
