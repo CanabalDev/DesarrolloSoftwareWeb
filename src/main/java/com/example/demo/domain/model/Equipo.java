@@ -1,6 +1,5 @@
-package com.example.demo.modelo;
+package com.example.demo.domain.model;
 
-import jakarta.persistence.Basic;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
