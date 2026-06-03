@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "400cdb2a-57d0-41b1-83fb-273edfb42d29",
+		"name": "UDC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39565159"
+	},
+	"item": [
+		{
+			"name": "GET / equipo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/equipos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"equipos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / listar equipos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/equipos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"equipos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /  equipos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoria\": \"Profesional\",\n    \"ciudad\": \"Milan\",\n    \"eslogan\": \"C'è solo l'Inter\",\n    \"nombre\": \"Inter de Milan\",\n    \"numCampeonatos\": 21,\n    \"numEmpates\": 6,\n    \"numExpulsiones\": 3,\n    \"numGoles\": 89,\n    \"numPartidosGanados\": 27,\n    \"numPartidosJugados\": 38,\n    \"pais\": \"Italia\",\n    \"tecnico\": \"Cristian Chivu\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/equipos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"equipos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /  equipos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"categoria\": \"Profesional\",\n    \"ciudad\": \"Milan\",\n    \"eslogan\": \"Los mejores\",\n    \"nombre\": \"Como\",\n    \"numCampeonatos\": 0,\n    \"numEmpates\": 0,\n    \"numExpulsiones\": 0,\n    \"numGoles\": 0,\n    \"numPartidosGanados\": 0,\n    \"numPartidosJugados\": 0,\n    \"pais\": \"Italia\",\n    \"tecnico\": \"Cesc Fabregas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/equipos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"equipos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /  equipos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/equipos/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"equipos",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET / listar usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /  usuarios",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"messi@gmail.com\",\n    \"nombre\": \"Lionel Andres Messi\",\n    \"password\": \"1234\",\n    \"username\": \"messi10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /  usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"james@gmail.com\",\n    \"nombre\": \"James Rodriguez\",\n    \"password\": \"4321\",\n    \"username\": \"james10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /  usuarios",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /  login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"messi10\",\n    \"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/api/usuarios/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
