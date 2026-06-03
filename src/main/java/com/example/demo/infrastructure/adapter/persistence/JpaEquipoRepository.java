@@ -2,23 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.example.demo.servicio;
+package com.example.demo.infrastructure.adapter.persistence;
 
 import com.example.demo.domain.model.Equipo;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author lm-carlos
  */
-public interface IntEquipoServicio {
+public interface JpaEquipoRepository extends JpaRepository<Equipo, Long> {
     
-    public List<Equipo> listarTodos();
-    
-    public void guardar (Equipo equipo);
-    
-    public void eliminar (Equipo equipo);
-    
-    public Equipo buscar (Equipo equipo);
-
 }

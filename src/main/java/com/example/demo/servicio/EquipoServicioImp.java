@@ -1,6 +1,6 @@
 package com.example.demo.servicio;
 
-import com.example.demo.modelo.Equipo;
+import com.example.demo.domain.model.Equipo;
 import com.example.demo.dao.ImpEquipoCrud;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

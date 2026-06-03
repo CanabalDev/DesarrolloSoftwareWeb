@@ -4,7 +4,7 @@
  */
 package com.example.demo.dao;
 
-import com.example.demo.modelo.Equipo;
+import com.example.demo.domain.model.Equipo;
 import org.springframework.data.repository.CrudRepository;
 
 /**
