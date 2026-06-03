@@ -8,20 +8,48 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
           xmlns="http://www.w3.org/1999/xhtml" >
         <title>APLICACION WEB CON SPRING BOOT</title>
         <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                </head>
-                <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilos.css}">
+    </head>
+    <body>
+        <header th:fragment="cabecero" class="main-header">
 
-                    <header th:fragment="cabecero" >
-                        <h1 th:text="#{plantilla.titulo}" >TITULO</h1>
-                    </header>
-                    <footer th:fragment="piecero" >
-                        <span th:text="#{plantilla.pie}" >PIE</span>
-                        <a href="https://youtube.com" >Video de sustentación</a>
-                        <form th:action="@{/logout}" method="post">
-                            <input type="submit" value="Cerrar sesión">
-                        </form>
-                    </footer>
+            <div class="header-content">
 
-                </body>
-                </html>
+                <div class="logo-section">
+                    <span class="logo-icon"><strong>CC</strong></span>
+                    <h1 th:text="#{plantilla.titulo}">Gestión de Equipos</h1>
+                </div>
+
+                <div class="header-subtitle">
+                    Sistema de Administración Deportiva
+                </div>
+
+            </div>
+
+        </header>
+
+        <footer th:fragment="piecero" class="main-footer">
+
+            <div class="footer-left">
+                <span th:text="#{plantilla.pie}">
+                    Por Carlos Canabal
+                </span>
+            </div>
+
+            <div class="footer-center">
+                <a href="https://youtube.com" target="_blank">
+                    Video de sustentación
+                </a>
+            </div>
+            <div class="footer-right">
+                <form th:action="@{/logout}" method="post">
+                    <button type="submit" class="logout-btn">
+                        Cerrar sesión
+                    </button>
+                </form>
+            </div>
+        
+        </footer>
+    </body>
+</html>

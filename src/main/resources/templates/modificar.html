@@ -9,96 +9,120 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" th:href="@{/css/estilos.css}">
     </head>
     <body>
 
-        <h1 th:text="#{equipo.formulario}"></h1>
+        <div class="form-container">
 
-        <a th:href="@{/}" th:text="#{accion.regresar}"></a>
+            <div class="form-card">
 
-        <br/>
-        <hr/>
+                <h1 th:text="#{equipo.formulario}"></h1>
 
-        <form th:action="@{/guardar}" method="POST" th:object="${equipo}">
+                <a class="btn-volver" th:href="@{/}">
+                    ← Regresar
+                </a>
 
-            <input type="hidden" th:field="*{id}" />
+                <form th:action="@{/guardar}" method="POST" th:object="${equipo}">
 
-            <label for="nombre" th:text="#{equipo.nombre}"></label>
-            <input type="text" th:field="*{nombre}" />
-            <span th:if="${#fields.hasErrors('nombre')}"
-                  th:errors="*{nombre}"></span>
-            <br/>
+                    <input type="hidden" th:field="*{id}" />
 
-            <label for="eslogan" th:text="#{equipo.eslogan}"></label>
-            <input type="text" th:field="*{eslogan}" />
-            <br/>
+                    <div class="campo">
+                        <label th:text="#{equipo.nombre}"></label>
+                        <input type="text" th:field="*{nombre}" />
+                        <span class="error"
+                              th:if="${#fields.hasErrors('nombre')}"
+                              th:errors="*{nombre}"></span>
+                    </div>
 
-            <label for="tecnico" th:text="#{equipo.tecnico}"></label>
-            <input type="text" th:field="*{tecnico}" />
-            <span th:if="${#fields.hasErrors('tecnico')}"
-                  th:errors="*{tecnico}"></span>
-            <br/>
+                    <div class="campo">
+                        <label th:text="#{equipo.eslogan}"></label>
+                        <input type="text" th:field="*{eslogan}" />
+                    </div>
 
-            <label for="pais" th:text="#{equipo.pais}"></label>
-            <input type="text" th:field="*{pais}" />
-            <span th:if="${#fields.hasErrors('pais')}"
-                  th:errors="*{pais}"></span>
-            <br/>
+                    <div class="campo">
+                        <label th:text="#{equipo.tecnico}"></label>
+                        <input type="text" th:field="*{tecnico}" />
+                        <span class="error"
+                              th:if="${#fields.hasErrors('tecnico')}"
+                              th:errors="*{tecnico}"></span>
+                    </div>
 
-            <label for="ciudad" th:text="#{equipo.ciudad}"></label>
-            <input type="text" th:field="*{ciudad}" />
-            <span th:if="${#fields.hasErrors('ciudad')}"
-                  th:errors="*{ciudad}"></span>
-            <br/>
+                    <div class="campo">
+                        <label th:text="#{equipo.pais}"></label>
+                        <input type="text" th:field="*{pais}" />
+                        <span class="error"
+                              th:if="${#fields.hasErrors('pais')}"
+                              th:errors="*{pais}"></span>
+                    </div>
 
-            <label for="categoria" th:text="#{equipo.categoria}"></label>
-            <input type="text" th:field="*{categoria}" />
-            <span th:if="${#fields.hasErrors('categoria')}"
-                  th:errors="*{categoria}"></span>
-            <br/>
+                    <div class="campo">
+                        <label th:text="#{equipo.ciudad}"></label>
+                        <input type="text" th:field="*{ciudad}" />
+                        <span class="error"
+                              th:if="${#fields.hasErrors('ciudad')}"
+                              th:errors="*{ciudad}"></span>
+                    </div>
 
-            <label for="numGoles" th:text="#{equipo.numGoles}"></label>
-            <input type="number" th:field="*{numGoles}" />
-            <span th:if="${#fields.hasErrors('numGoles')}"
-                  th:errors="*{numGoles}"></span>
-            <br/>
+                    <div class="campo">
+                        <label th:text="#{equipo.categoria}"></label>
+                        <input type="text" th:field="*{categoria}" />
+                        <span class="error"
+                              th:if="${#fields.hasErrors('categoria')}"
+                              th:errors="*{categoria}"></span>
+                    </div>
 
-            <label for="numPartidosJugados" th:text="#{equipo.numPartidosJugados}"></label>
-            <input type="number" th:field="*{numPartidosJugados}" />
-            <span th:if="${#fields.hasErrors('numPartidosJugados')}"
-                  th:errors="*{numPartidosJugados}"></span>
-            <br/>
+                    <div class="stats-grid">
 
-            <label for="numPartidosGanados" th:text="#{equipo.numPartidosGanados}"></label>
-            <input type="number" th:field="*{numPartidosGanados}" />
-            <span th:if="${#fields.hasErrors('numPartidosGanados')}"
-                  th:errors="*{numPartidosGanados}"></span>
-            <br/>
+                        <div class="campo">
+                            <label th:text="#{equipo.numGoles}"></label>
+                            <input type="number" th:field="*{numGoles}" />
+                        </div>
 
-            <label for="numCampeonatos" th:text="#{equipo.numCampeonatos}"></label>
-            <input type="number" th:field="*{numCampeonatos}" />
-            <span th:if="${#fields.hasErrors('numCampeonatos')}"
-                  th:errors="*{numCampeonatos}"></span>
-            <br/>
+                        <div class="campo">
+                            <label th:text="#{equipo.numPartidosJugados}"></label>
+                            <input type="number" th:field="*{numPartidosJugados}" />
+                        </div>
 
-            <label for="numExpulsiones" th:text="#{equipo.numExpulsiones}"></label>
-            <input type="number" th:field="*{numExpulsiones}" />
-            <span th:if="${#fields.hasErrors('numExpulsiones')}"
-                  th:errors="*{numExpulsiones}"></span>
-            <br/>
+                        <div class="campo">
+                            <label th:text="#{equipo.numPartidosGanados}"></label>
+                            <input type="number" th:field="*{numPartidosGanados}" />
+                        </div>
 
-            <label for="numEmpates" th:text="#{equipo.numEmpates}"></label>
-            <input type="number" th:field="*{numEmpates}" />
-            <span th:if="${#fields.hasErrors('numEmpates')}"
-                  th:errors="*{numEmpates}"></span>
-            <br/>
+                        <div class="campo">
+                            <label th:text="#{equipo.numCampeonatos}"></label>
+                            <input type="number" th:field="*{numCampeonatos}" />
+                        </div>
 
-            <input type="reset" th:value="#{accion.reiniciar}" />
-            &nbsp;&nbsp;&nbsp;
+                        <div class="campo">
+                            <label th:text="#{equipo.numExpulsiones}"></label>
+                            <input type="number" th:field="*{numExpulsiones}" />
+                        </div>
 
-            <input type="submit" th:value="#{accion.guardar}" />
+                        <div class="campo">
+                            <label th:text="#{equipo.numEmpates}"></label>
+                            <input type="number" th:field="*{numEmpates}" />
+                        </div>
 
-        </form>
+                    </div>
+
+                    <div class="botones-form">
+
+                        <input class="btn-reset"
+                               type="reset"
+                               th:value="#{accion.reiniciar}" />
+
+                        <input class="btn-save"
+                               type="submit"
+                               th:value="#{accion.guardar}" />
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
 
     </body>
 </html>

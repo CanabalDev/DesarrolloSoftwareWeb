@@ -8,54 +8,86 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Equipo de futbol</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/css/estilos.css}">
     </head>
     <body>
         <header th:replace="plantillas/partes :: cabecero" ></header>
         <h2>PAGINA DE INICIO</h2>
 
-        <a th:href="@{/agregar}" >Agregar equipo</a>
+        <a th:href="@{/agregar}" class="agregar-equipo">
+            Agregar equipo
+        </a>
 
         <div th:if="${equipos != null and !equipos.empty}">
-            <table border="1" cellspacing="1" cellpadding="1">
-                <thead>
-                    <tr>
-                        <th>NOMBRE</th>
-                        <th>ESLOGAN</th>
-                        <th>TECNICO</th>
-                        <th>PAIS</th>
-                        <th>CIUDAD</th>
-                        <th>CATEGORIA</th>
-                        <th>GOLES</th>
-                        <th>PARTIDOS JUGADOS</th>
-                        <th>PARTIDOS GANADOS</th>
-                        <th>CAMPEONATOS</th>
-                        <th>EXPULSIONES</th>
-                        <th>EMPATES</th>
-                        <th>EDITAR</th>
-                        <th>ELIMINAR</th>
+            <div class="contenedor-cards">
 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="e: ${equipos}">
-                        <td th:text="${e.nombre}" ></td>
-                        <td th:text="${e.eslogan}" ></td>
-                        <td th:text="${e.tecnico}" ></td>
-                        <td th:text="${e.pais}" ></td>
-                        <td th:text="${e.ciudad}" ></td>
-                        <td th:text="${e.categoria}" ></td>
-                        <td th:text="${e.numGoles}" ></td>
-                        <td th:text="${e.numPartidosJugados}" ></td>
-                        <td th:text="${e.numPartidosGanados}" ></td>
-                        <td th:text="${e.numCampeonatos}" ></td>
-                        <td th:text="${e.numExpulsiones}" ></td>
-                        <td th:text="${e.numEmpates}" ></td>
-                        <td> <a th:href="@{/editar/{id}(id=${e.id})}" th:text="EDITAR" ></a> </td>
-                        <td> <a th:href="@{/eliminar/{id}(id=${e.id})}" th:text="ELIMINAR" ></a> </td>
+                <div class="card-equipo" th:each="e : ${equipos}">
 
-                    </tr>
-                </tbody>
-            </table>
+                    <div class="card-header">
+                        <h3 th:text="${e.nombre}"></h3>
+                        <span class="categoria" th:text="${e.categoria}"></span>
+                    </div>
+
+                    <div class="card-body">
+
+                        <p><strong>Eslogan:</strong> <span th:text="${e.eslogan}"></span></p>
+                        <p><strong>Técnico:</strong> <span th:text="${e.tecnico}"></span></p>
+                        <p><strong>País:</strong> <span th:text="${e.pais}"></span></p>
+                        <p><strong>Ciudad:</strong> <span th:text="${e.ciudad}"></span></p>
+
+                        <div class="estadisticas">
+
+                            <div class="stat">
+                                <span class="numero" th:text="${e.numGoles}"></span>
+                                <span>Goles</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="numero" th:text="${e.numPartidosJugados}"></span>
+                                <span>Jugados</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="numero" th:text="${e.numPartidosGanados}"></span>
+                                <span>Ganados</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="numero" th:text="${e.numCampeonatos}"></span>
+                                <span>Títulos</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="numero" th:text="${e.numExpulsiones}"></span>
+                                <span>Expulsiones</span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="numero" th:text="${e.numEmpates}"></span>
+                                <span>Empates</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="acciones">
+
+                        <a class="btn editar"
+                           th:href="@{/editar/{id}(id=${e.id})}">
+                            Editar
+                        </a>
+
+                        <a class="btn eliminar"
+                           th:href="@{/eliminar/{id}(id=${e.id})}">
+                            Eliminar
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>    
 
